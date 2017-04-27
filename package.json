@@ -1,14 +1,21 @@
 {
   "name": "electron-fun",
   "version": "1.0.0",
-  "description": "A sample of what the soda app could be",
+  "description": "A starter electron application",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently \"npm run start:electron\" \"npm run watch:less\"",
+    "start": "run-p start:electron watch:less",
     "start:electron": "electron .",
-    "watch:less": "less-watch-compiler ./less ./css"
+    "watch:less": "less-watch-compiler ./less ./css",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch",
+    "deploy": "git push origin master",
+    "deploy:major": "run-s version:major deploy",
+    "deploy:minor": "run-s version:minor deploy",
+    "deploy:patch": "run-s version:patch deploy"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/yancyknight/electron-start",
   "keywords": [
     "Electron",
     "quick",
@@ -19,10 +26,11 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "concurrently": "^3.4.0",
     "electron": "~1.6.2",
     "electron-reload": "^1.1.0",
     "less": "^2.7.2",
-    "less-watch-compiler": "^1.4.2"
+    "less-watch-compiler": "^1.4.2",
+    "npm-run-all": "^4.0.2",
+    "semver": "^5.3.0"
   }
 }
