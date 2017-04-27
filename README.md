@@ -8,6 +8,7 @@ You can view the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick
 
 * Automatic reloading with electron-reload
 * LESS support with less-watch-compiler
+* Additional NPM scripts (view [package.json](https://github.com/yancyknight/electron-start/blob/master/package.json))
 
 ## To Use
 
